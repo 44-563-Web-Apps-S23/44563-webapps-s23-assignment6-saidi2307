@@ -9,7 +9,7 @@
 
 <form>
     <label for="form1_pwd">The hidden painter name</label>
-    <input type ="password" id="form1_pwd" name="form1_age"  value="Monet"> <br>
+    <input type ="password" id="form1_pwd" name="form1_pwd"  value="Monet"> <br>
 
     <label for="form1_gp">Guess the painter</label>
     <input type ="text" id="form1_gp" name="form1_gp" autofocus> <br>
@@ -30,7 +30,7 @@ function checkPainter(){
     if(painter == guess){
         good++
         out.innerHTML = good
-        alert("You got it right”")
+        alert("You got it right")
         
     } else {
         oops++
