@@ -19,6 +19,11 @@
 </form>
 
 <p id="results"></p>
+<div class="container">
+    <img src="Gaillardia.jpg" id="imgid" width="100" height="100" onclick="selectImage()">
+  
+  </div>
+
 
 
 <script>
@@ -41,6 +46,21 @@
         document.getElementById("results").innerHTML = "good counts : " + good + " <br> oops counts : " + oops
 
     }
+
+    function selectImage(){
+  
+  switch(useImage){
+   case 1:
+     useImage=2;document.getElementById("imgid").src="Lagerstroemia.jpg";break;
+   case 2:
+     useImage=3;document.getElementById("imgid").src="Osteospermum.jpg";break;
+   case 3:
+     useImage=1;document.getElementById("imgid").src="Gaillardia.jpg";break;
+ 
+ 
+  }
+ 
+ }
 </script>
 
 </body>
