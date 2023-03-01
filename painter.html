@@ -20,7 +20,7 @@
 
 <p id="results"></p>
 <div class="container">
-    <img src="Gaillardia.jpg" id="imgid" width="100" height="100" onclick="selectImage()">
+    <img src="cherryblossom.jpg" id="imgid" width="100" height="100" onclick="selectImage()">
   
   </div>
 
@@ -29,6 +29,7 @@
 <script>
     var good = 0;
     var oops = 0;
+    var useImage=1;
     function checkPainter() {
         painter = document.getElementById("form2_painter").value
         guess = document.getElementById("form2_guess").value
@@ -51,11 +52,11 @@
   
   switch(useImage){
    case 1:
-     useImage=2;document.getElementById("imgid").src="Lagerstroemia.jpg";break;
+     useImage=2;document.getElementById("imgid").src="hydrangea.jpg";break;
    case 2:
-     useImage=3;document.getElementById("imgid").src="Osteospermum.jpg";break;
+     useImage=3;document.getElementById("imgid").src="eucalyptus.jpg";break;
    case 3:
-     useImage=1;document.getElementById("imgid").src="Gaillardia.jpg";break;
+     useImage=1;document.getElementById("imgid").src="cherryblossom.jpg";break;
  
  
   }
