@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head><title>conversion</title></head>
+ 
+<body>
+    <h2>Saidi Reddy Cheemalamarri shows currency conversions</h2>
+
+<h2>Getting input</h2>
+
+<div class="container"><form>
+    <div class="form-group">
+    <label for="form1_age">Enter base amount </label>
+    <input type ="number" id="baseval" name="form1_age" min=10 max=50 step=2 value=50> <br>
+
+    <label for="form1_nick">Enter the conversion rate </label>
+    <input type ="number" id="convVal" name="form1_age" min=10 max=50 step=2 value=35> <br> <br>
+
+    <input type="button" class="btn btn-primary" onclick="convert()" value="Show conversions">
+</div>
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<form>
+    <div class="form-group">
+<input type="radio" name="action" id="mean" name="average" value="mean">
+<label for="mean">Mean</label><br>
+<input type="radio" name="action" id="max" name="max" value="maximum">
+<label for="max">Max</label><br>
+<input type="radio" name="action" id="min" name="min" value="minimum">
+<label for="min">Min</label><br> 
+</form>   
+
+
+    <input type="button" class="btn btn-primary" onclick="chooseOp()" value="Get values from radio group">
+  </form>
+  <p id="result1">This text will be replaced </p>
+</div>
+
+<script> 
+var toShow='';
+var outstr='';
+function convert(){
+    toShow='';
+var base=document.getElementById("baseval").value;
+var conv=document.getElementById("convVal").value;
+var base1=base;
+for (let i = 1; i <=5; i++) {
+    console.log(2**i);
+    
+    toShow=toShow+base+' is '+Math.round(base*conv * 100) / 100+'; ';
+    base=base1*(2**i);
+    
+}
+document.getElementById("result").innerHTML='Conversions are: '+toShow;  
+}
+
+function chooseOp(){
+    //toShow='';
+var base=document.getElementById("baseval").value;
+var conv=document.getElementById("convVal").value;
+var operation=document.querySelector('input[name="action"]:checked').value;
+console.log('operation',operation);
+console.log('conv',conv);
+var base1=base;
+if(operation=='minimum'){
+    document.getElementById("result1").innerHTML='Min of '+base+' and '+conv+' is '+ Math.min(base,conv);
+}
+else if(operation=='maximum'){
+    document.getElementById("result1").innerHTML='Max of '+base+' and '+conv+' is '+ Math.max(base,conv);
+}else if(operation=='mean'){
+    document.getElementById("result1").innerHTML='Mean of '+base+' and '+conv+' is '+ (parseInt(base) + parseInt(conv))/2;
+}
+
+document.getElementById("result").innerHTML='Conversions are: '+toShow;
+    
+}
+
+function resolveForm (){
+    console.log("Getting form values")
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+</script>
+
+
+</body>
+</html> 

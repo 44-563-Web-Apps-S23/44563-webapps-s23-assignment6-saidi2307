@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Choose Candy</title></head>
+ 
+<body>
+    <h2>Saidi Reddy Cheemalamarri chooses candy</h2>
+
+<h2>Getting input</h2>
+
+<div class="container">
+    <div class="form-group">
+  <form>
+      <input type="checkbox" id="chocolate" name="topping1"   
+        value="True" checked>
+      <label for="cb1_cheese">Dark Chocolate</label></br>
+    
+      <input type="checkbox" id="nuts" name="topping2" 
+         value="True">
+      <label for="cb1_olive">Nuts</label></br>
+    
+      <input type="checkbox" id="chewy" name="topping3"   
+         value="False" checked>
+      <label for="cb1_onion">Chewy</label></br>
+
+      <input type="button" class="btn btn-primary" onclick="selectBox()" value="Select a box">
+    </form>
+  </div>
+    <p id="resultval">This text will be replaced </p>
+
+    <div class="form-group">
+    <form>
+      <label for="form1_age">Enter the size </label>
+      <input type ="text" id="size" value="size" name="form1_nick" autofocus> <br>
+  
+      <label for="form1_nick">Enter price </label>
+      <input type ="text" id="price" name="form1_nick" autofocus> <br>
+  
+      <input type="button" class="btn btn-primary" onclick="updateBox()" value="Update the box">
+  </form>
+  </div>
+  <p id="resultvalnew">This text will be replaced </p>
+</div>
+    <script>
+     my_candy_box={};
+     function selectBox(){
+      my_candy_box ={};
+      my_candy_box.dark=document.getElementById("chocolate").checked;
+      my_candy_box.nuts=document.getElementById("nuts").checked;
+      my_candy_box.chewy=document.getElementById("chewy").checked;
+      document.getElementById("resultval").innerHTML=JSON.stringify(my_candy_box);
+      
+  }
+  function updateBox(){
+     
+      my_candy_box.size=document.getElementById("size").value;
+      my_candy_box.price=document.getElementById("price").value;
+      
+      document.getElementById("resultvalnew").innerHTML=JSON.stringify(my_candy_box);
+      
+  }
+
+    </script>
+</body>
+</html> 
