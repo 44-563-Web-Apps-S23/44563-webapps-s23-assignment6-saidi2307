@@ -43,6 +43,9 @@
             oops += 1
             alert("Sorry");
         }
+        if(oops>10){
+          alert("Sorry,ran out of guesses")
+        }
 
         document.getElementById("results").innerHTML = "good counts : " + good + " <br> oops counts : " + oops
 
